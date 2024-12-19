@@ -80,28 +80,38 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import CardActionArea from "@mui/material/CardActionArea";
-import Grid from "@mui/material/Grid2";
-
+import Grid from "@mui/material/Grid";
+import { Link } from "react-router-dom";
 export default function MainCards({ cards }) {
   return (
     <Grid container spacing={3}>
       {cards.map((card, index) => (
-        <Grid item xs={4} sm={4} md={4} key={index}>
+        <Grid item xs={12} sm={6} md={4} key={index}>
           <Card sx={{ maxWidth: 345 }}>
-            <CardActionArea>
-              <CardMedia component="img" height="140" image={card.src} alt={card.name} />
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
-                  {card.name}
-                </Typography>
-                <Typography variant="body2" sx={{ color: "text.secondary" }}>
-                  {card.title}
-                </Typography>
-                <Typography variant="body2" sx={{ color: "text.secondary" }}>
-                  {card.email}
-                </Typography>
-              </CardContent>
-            </CardActionArea>
+            <Link
+              to={card.link}
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              <CardActionArea>
+                <CardMedia
+                  component="img"
+                  height="200"
+                  image={card.src}
+                  alt={card.name}
+                />
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="div">
+                    {card.name}
+                  </Typography>
+                  <Typography variant="body2" sx={{ color: "text.secondary" }}>
+                    {card.title}
+                  </Typography>
+                  <Typography variant="body2" sx={{ color: "text.secondary" }}>
+                    {card.email}
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+            </Link>
           </Card>
         </Grid>
       ))}
