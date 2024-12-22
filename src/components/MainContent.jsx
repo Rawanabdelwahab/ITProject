@@ -2,6 +2,7 @@
 import React from "react";
 import MainCards from "./MainCards";
 import template from "../images/template-3.jpg";
+import Header from "./Header";
 
 export default function MainContent() {
   // Array of card data
@@ -19,6 +20,7 @@ export default function MainContent() {
       link: "/Corniche",
       src: template,
     },
+
     {
       name: "Hilton Alexandria King's Ranch",
       title: "Hilton Alexandria King's Ranch",
@@ -76,5 +78,10 @@ export default function MainContent() {
     },
   ];
 
-  return <MainCards cards={cardData} />;
+  return(
+    <div>
+    <Header/>
+   <MainCards cards={cardData} />
+   </div>
+  )
 }
