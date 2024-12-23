@@ -85,8 +85,14 @@ import { Link } from "react-router-dom";
 import { Container } from "@mui/material";
 export default function MainCards({ cards }) {
   return (
-    <Container maxWidth="lg" style={{ textAlign: 'center' }}>
-      <Grid container spacing={3}>
+    <Container maxWidth="lg" style={{ textAlign: "center" }}>
+      <Grid
+        container
+        spacing={3}
+        justifyContent="center"
+        alignItems="center"
+        style={{ minHeight: "100vh" }} // Optional: Centers vertically in the viewport
+      >
         {cards.map((card, index) => (
           <Grid item xs={12} sm={6} md={4} key={index}>
             <Card sx={{ maxWidth: 345, minWidth: 200 }}>

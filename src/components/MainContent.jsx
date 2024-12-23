@@ -78,10 +78,9 @@ export default function MainContent() {
     },
   ];
 
-  return(
+  return (
     <div>
-    <Header/>
-   <MainCards cards={cardData} />
-   </div>
-  )
+      <MainCards cards={cardData} />
+    </div>
+  );
 }

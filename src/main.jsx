@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import MainContent from "./components/MainContent";
 import Greenplaza from "./components/Greenplaza";
 import Conrad from "./components/Conrad";
 import Corniche from "./components/Chorniche";
@@ -17,11 +16,12 @@ import King from "./components/King";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import "./index.css";
+import BodyContainer from "./components/BodyContainer";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <MainContent />,
+    element: <BodyContainer />,
   },
   {
     path: "/Greenplaza",
